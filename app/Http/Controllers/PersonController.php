@@ -15,7 +15,7 @@ class PersonController extends Controller
 {
     use ApiResponse;
 
-    protected $personRepository;
+    protected PersonRepositoryInterface $personRepository;
 
     public function __construct(PersonRepositoryInterface $repository)
     {

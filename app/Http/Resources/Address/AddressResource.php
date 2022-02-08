@@ -2,10 +2,8 @@
 
 namespace App\Http\Resources\Address;
 
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use JsonSerializable;
 
 class AddressResource extends JsonResource
 {
@@ -13,10 +11,17 @@ class AddressResource extends JsonResource
      * Transform the resource into an array.
      *
      * @param  Request  $request
-     * @return array|Arrayable|JsonSerializable
+     * @return array
      */
-    public function toArray($request)
+    public function toArray($request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'address' => $this->address,
+            'post_code' => $this->post_code,
+            'city_name' => $this->city_name,
+            'country_name' => $this->country_name,
+            'person_id' => $this->person_id,
+        ];
     }
 }

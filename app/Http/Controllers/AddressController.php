@@ -16,7 +16,7 @@ class AddressController extends Controller
 {
     use ApiResponse;
 
-    protected $addressRepository;
+    protected AddressRepositoryInterface $addressRepository;
 
     public function __construct(AddressRepositoryInterface $repository)
     {
