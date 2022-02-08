@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @property mixed $id
- * @property mixed $address
- * @property mixed $post_code
- * @property mixed $city_name
- * @property mixed $country_name
- * @property mixed $person_id
+ * @property int $id
+ * @property string $address
+ * @property string $post_code
+ * @property string $city_name
+ * @property string $country_name
+ * @property int $person_id
  */
 class AddressResource extends JsonResource
 {
