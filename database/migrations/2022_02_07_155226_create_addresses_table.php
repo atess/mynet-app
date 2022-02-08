@@ -21,7 +21,10 @@ class CreateAddressesTable extends Migration
             $table->string('city_name', 50);
             $table->string('country_name', 50);
 
-            $table->foreignIdFor(Person::class)->constrained();
+            $table->foreignIdFor(Person::class)
+                ->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 
