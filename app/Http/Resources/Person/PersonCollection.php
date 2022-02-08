@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class PersonCollection extends ResourceCollection
 {
-    public $pagination;
+    public PaginationResource $pagination;
 
     public function __construct($resource)
     {
