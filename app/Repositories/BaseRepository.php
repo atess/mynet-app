@@ -40,8 +40,14 @@ class BaseRepository implements BaseRepositoryInterface
         }
 
         if (count($where) > 0)
-            foreach ($where as $column) {
-                $key.= '.' . $column;
+            foreach ($where as $k => $v) {
+                $key.= '.' . $k.'-'.$v;
+            }
+
+        $requestParams = request()->all();
+        if (count($requestParams) > 0)
+            foreach ($requestParams as $k => $v) {
+                $key.= '.' . $k.'-'.$v;
             }
 
         return Cache::remember($key, 60, function () use ($where, $columns, $perPage) {
